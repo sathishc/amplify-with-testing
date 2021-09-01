@@ -4,6 +4,9 @@ frontend:
     preBuild:
       commands:
         - yarn install
+    test:
+      commands:
+        - yarn test    
     build:
       commands:
         - yarn run build    
@@ -14,15 +17,3 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-test:
-  phases:
-    preTest:
-      commands:
-        - yarn install
-    test:
-      commands:
-        - yarn test
-  artifacts:
-    baseDirectory: build
-    files:
-      - '**/*'    
